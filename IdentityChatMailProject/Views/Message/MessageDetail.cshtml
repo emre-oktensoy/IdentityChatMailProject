@@ -1,0 +1,73 @@
+﻿@model IdentityChatMailProject.Entities.Message
+@{
+	ViewData["Title"] = "Inbox";
+	Layout = "~/Views/Shared/_MessageLayout.cshtml";
+
+}
+
+<div class="content-body">
+
+	<div class="row page-titles mx-0">
+		<div class="col p-md-0">
+			<ol class="breadcrumb">
+				
+			</ol>
+		</div>
+	</div>
+	<!-- row -->
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="card">
+					<div class="card-body">
+
+						@await Component.InvokeAsync("_MessageSideBarComponentPartial")
+
+						<div class="email-right-box">
+							<div role="toolbar" class="toolbar">
+								<div class="btn-group">
+									
+								</div>
+							</div>
+							<div class="email-list m-t-15">
+								
+									<div class="d-flex justify-content-between align-items-center py-2 px-2">
+									<div class="d-flex align-items-center" style="width: 30px;">
+										
+										
+											<a href="/Message/MoveToTrash/@Model.MessageId" title="Çöp Kutusuna Taşı">
+											<i class="fa fa fa-trash text-warning"></i>
+											</a>
+										
+										
+									</div>
+									<a class="flex-grow-1 mx-3 overflow-hidden text-decoration-none" style="color: inherit;">
+											<div class="fw-semibold text-primary text-nowrap">
+											<b> Mesajı Gönderen:@Model.SenderEmail </b>
+											</div>
+											<div class="fw-bold bg-light text-success px-2 py-1 rounded">
+											<b> Mesaj Konusu: @Model.Subject</b>
+											</div>
+											<div class="fw-bold bg-light text-success px-2 py-1 rounded">
+											<b> Mesaj İçeriği: @Model.MessageDetail</b>
+										</div>
+										</a>
+
+										<div class="text-muted text-end" style="width: 100px;">
+											@Model.SendDate.ToShortDateString()
+										</div>
+									</div>
+								
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- #/ container -->
+</div>

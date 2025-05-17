@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("_HeadComponentPartial")
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+    @await Component.InvokeAsync("_NavBarComponentPartial")
+
+    @await Component.InvokeAsync("_SideBarComponentPartial")
+        
+        <!--**********************************
+            Content body start
+        ***********************************--> 
+
+        @RenderBody()
+       
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+    @await Component.InvokeAsync("_FooterComponentPartial")
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="/quixlab-master/plugins/common/common.min.js"></script>
+    <script src="/quixlab-master/js/custom.min.js"></script>
+    <script src="/quixlab-master/js/settings.js"></script>
+    <script src="/quixlab-master/js/gleek.js"></script>
+    <script src="/quixlab-master/js/styleSwitcher.js"></script>
+
+</body>
+
+</html>

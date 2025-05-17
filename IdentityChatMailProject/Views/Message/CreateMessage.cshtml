@@ -1,0 +1,75 @@
+﻿@model IdentityChatMailProject.Entities.Message
+@{
+    ViewData["Title"] = "CreateMessage";
+    Layout = "~/Views/Shared/_MessageLayout.cshtml";
+}
+
+
+<div class="content-body">
+
+	<div class="row page-titles mx-0">
+		<div class="col p-md-0">
+			<ol class="breadcrumb">
+			</ol>
+		</div>
+	</div>
+	<!-- row -->
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="card">
+					<div class="card-body">
+
+						@await Component.InvokeAsync("_MessageSideBarComponentPartial")
+
+						<div class="email-right-box">
+							<div role="toolbar" class="toolbar">
+								<div class="p-2 mb-2  bg-primary text-white rounded">
+									<strong>Mesaj Oluştur</strong>
+								</div>
+							</div>
+							<div  class="compose-content mt-5">
+								<form method="post">
+									<div class="form-group">
+										<input type="text" asp-for="RecevierEmail" class="form-control bg-transparent" placeholder=" Alıcı Email">
+									</div>
+									<div class="form-group">
+										<input type="text" asp-for="Subject" class="form-control bg-transparent" placeholder=" Konu">
+									</div>
+									<div class="form-group">
+										<textarea type="text" asp-for="MessageDetail" class="textarea_editor form-control bg-light" rows="15" placeholder="Mesajınızı girin ..."></textarea>
+									</div>
+									<button class="btn btn-primary"><i class="fa fa-paper-plane m-r-5"></i> Mesajı Gönder</button>
+								</form>
+								<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+								@if (TempData["MessageSent"] != null && TempData["MessageSent"].ToString() == "true")
+								{
+									<script>
+										Swal.fire({
+											icon: 'success',
+											title: 'Mesaj Başarılı Olarak iletilmiştir',
+											showConfirmButton: false,
+											timer: 2000
+										});
+									</script>
+								}
+								
+							</div>
+							
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- #/ container -->
+</div>
+
+
+	
+}

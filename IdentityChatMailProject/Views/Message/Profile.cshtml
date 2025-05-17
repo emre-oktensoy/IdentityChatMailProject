@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_MessageLayout.cshtml";
+}
+
+
+
+<div class="content-body">
+
+	<div class="row page-titles mx-0">
+		<div class="col p-md-0">
+			<ol class="breadcrumb">
+			</ol>
+		</div>
+	</div>
+	<!-- row -->
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="card">
+					<div class="card-body">
+
+						@await Component.InvokeAsync("_MessageSideBarComponentPartial")
+
+						<div class="email-right-box">
+							<div role="toolbar" class="toolbar">
+								
+							</div>
+							<div class="email-list m-t-15">
+
+								<div class="d-flex justify-content-between align-items-center py-2 px-2">
+									
+									<a class="flex-grow-1 mx-3 overflow-hidden text-decoration-none" style="color: inherit;">
+										<div class="fw-semibold text-primary text-nowrap">
+											<b> @ViewBag.v1 </b>
+										</div>
+										<div class="fw-bold bg-light text-success px-2 py-1 rounded">
+											<b> E-posta Adresi: @ViewBag.v2</b>
+										</div>
+										<div class="fw-bold bg-light text-success px-2 py-1 rounded">
+											<b> Şehir: @ViewBag.v3</b>
+										</div>
+										<div class="fw-bold bg-light text-success px-2 py-1 rounded">
+											<b> Telefon Numarası: @ViewBag.v4</b>
+										</div>
+										<div class="fw-bold bg-light text-success px-2 py-1 rounded">
+											<b> Image Url: @ViewBag.v5</b>
+										</div>
+										<div class="fw-bold bg-light text-success px-2 py-1 rounded">
+											<img src="@ViewBag.v5" alt="Profil Resmi" style="max-width:200px; max-height:200px;" />
+
+										</div>
+									</a>
+
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- #/ container -->
+</div>
